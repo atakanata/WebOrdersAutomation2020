@@ -20,6 +20,14 @@ public abstract class AbstractBasePage {
     @FindBy(tagName = "h1")
     protected WebElement pageLogo;
 
+    @FindBy (tagName = "h2")
+    protected WebElement pageSubtitle;
+
+    public String getPageSubtitle(){
+        BrowserUtilities.waitForPageToLoad(10);
+        return pageSubtitle.getText().trim();
+    }
+
     public String getPageLogoText() {
         return pageLogo.getText();
     }
